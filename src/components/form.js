@@ -9,9 +9,10 @@ class Form extends React.Component {
     render() {
         return(
             <form method={"#"}>
-
             </form>
         );
     }
 
 }
+
+export default Form;
