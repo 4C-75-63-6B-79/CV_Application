@@ -1,4 +1,5 @@
 import React from "react";
+import PersonalInformation from "./personal_information";
 
 class Form extends React.Component {
 
@@ -9,6 +10,7 @@ class Form extends React.Component {
     render() {
         return(
             <form method={"#"}>
+                <PersonalInformation />
             </form>
         );
     }
