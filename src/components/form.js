@@ -6,11 +6,26 @@ class Form extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+           personalInformation: {},
+           experience: {},
+           education: {}
+        }
         this.submitButtonClicked = this.submitButtonClicked.bind(this);
+        this.setPersonalInformation = this.setPersonalInformation.bind(this);
     }
 
-    submitButtonClicked() {
-        console.log('submit button clicked');
+    setPersonalInformation(attributeName, attributeValue) {
+        const updatedPersonalInformation = this.state.personalInformation;
+        updatedPersonalInformation[attributeName] = attributeValue;
+        this.setState({
+            personalInformation: updatedPersonalInformation
+        });
+    }
+
+    submitButtonClicked(event) {
+        // event.preventDefault();
+        console.log(this.state);
     }
 
     render() {
@@ -18,7 +33,7 @@ class Form extends React.Component {
 
         return(
             <form method={"#"}>
-                <PersonalInformation />
+                <PersonalInformation setPersonalInformation={this.setPersonalInformation}/>
                 {fromSubmitButton}
             </form>
         );
