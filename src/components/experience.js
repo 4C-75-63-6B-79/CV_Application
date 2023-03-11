@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "./input";
+import Button from "./button";
 
 class Experience extends React.Component {
 
@@ -202,6 +203,7 @@ class Experience extends React.Component {
             <fieldset>
                 <legend>{"Experience"}</legend>
                 {inputElements}
+                <Button textContent={"Delete"} onClickMethod={this.deleteButtonClicked}/>
             </fieldset>
         )
     }
