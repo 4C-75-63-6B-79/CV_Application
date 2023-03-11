@@ -12,7 +12,6 @@ class Input extends React.Component {
     }
 
     inputValueChanged(event) {
-        console.log(event.target.value);
         if(!event.target.validity.valid) {
             this.setState({
                 className: 'error'
