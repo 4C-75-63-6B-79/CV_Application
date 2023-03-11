@@ -193,6 +193,10 @@ class Experience extends React.Component {
         });
     }
 
+    deleteButtonClicked(event) {
+        console.log('delete button clicked');
+    }
+
     render() {
         const inputElements = this.htmlInputProperties.map((inputElementProp) => {
             const {type, name, placeholder, minlength, maxlength, pattern, onChangeMethod} = inputElementProp;
