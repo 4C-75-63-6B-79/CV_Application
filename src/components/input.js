@@ -7,22 +7,26 @@ class Input extends React.Component {
         super(props);
         this.inputValueChanged = this.inputValueChanged.bind(this);
         this.state = {
-            errorMessage: this.props.errorMessage,
             className: 'error'
         }
     }
 
     inputValueChanged(event) {
         console.log(event.target.value);
+        if(!event.target.validity.valid) {
+            this.setState({
+                className: 'error'
+            })
+        }
         this.props.onChangeMethod(event);
     }
 
     render() {
-        const {type, name, placeholder, value, pattern, minLength, maxLength} = this.props;
+        const {type, name, placeholder, value, pattern, minLength, maxLength, errorMessage} = this.props;
         return(
             <div>
                 <input type={type} name={name} placeholder={placeholder} value={value} pattern={pattern} minLength={minLength} maxLength={maxLength} onChange={this.inputValueChanged} required></input>
-                <Error className={this.state.className} errorMessage={this.state.errorMessage}/>
+                <Error className={this.state.className} errorMessage={errorMessage}/>
             </div>
         );
     }
