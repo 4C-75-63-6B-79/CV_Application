@@ -42,12 +42,15 @@ class Form extends React.Component {
     }
 
     render() {
+        const experienceElemets = Array.from({length: this.state.numberOfExperience}, (v, i) => i).map((value) => {
+            return <Experience key={"experienceIndexv"+value} />
+        });
         const fromSubmitButton = <Button textContent="Submit" onClickMethod={this.submitButtonClicked}/>;
 
         return(
             <form method={"#"}>
                 <PersonalInformation setPersonalInformation={this.setPersonalInformation}/>
-                <Experience />
+                {experienceElemets}
                 {fromSubmitButton}
             </form>
         );
