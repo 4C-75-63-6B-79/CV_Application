@@ -149,25 +149,45 @@ class Experience extends React.Component {
     }
 
     inputFromValueChanged(event) {
-        console.log(event.target.validity.valid);
         const inputValue = event.target.value;
         const attributeValue = event.target.name;
+        const isValid = event.target.validity.valid;
+        let errorMessage = "";
+        if(isValid) {
+            errorMessage = "Input is valid.";
+        } else {
+            if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
+                errorMessage = "First character of month should be capital letter."
+            } else {
+                errorMessage = "Date should have a valid month and a year which can be as old as 1900. Format 'May, 1989'."
+            }
+        }
         this.setState({
             "From": {
                 value: inputValue,
-                errorMessage: ""
+                errorMessage: errorMessage
             }
         });
     }
 
     inputToValueChanged(event) {
-        console.log(event.target.validity.valid);
         const inputValue = event.target.value;
         const attributeValue = event.target.name;
+        const isValid = event.target.validity.valid;
+        let errorMessage = "";
+        if(isValid) {
+            errorMessage = "Input is valid.";
+        } else {
+            if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
+                errorMessage = "First character of month should be capital letter."
+            } else {
+                errorMessage = "Date should have a valid month and a year which can be as old as 1900. Format 'May, 1989'."
+            }
+        }
         this.setState({
             "To": {
                 value: inputValue,
-                errorMessage: ""
+                errorMessage: errorMessage
             }
         });
     }
