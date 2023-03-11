@@ -33,7 +33,6 @@ class Form extends React.Component {
     }
 
     removeExperienceButtonClicked() {
-        console.log(this);
         const updateNumberOfExperience = this.state.numberOfExperience - 1;
         this.setState({
             numberOfExperience: updateNumberOfExperience
