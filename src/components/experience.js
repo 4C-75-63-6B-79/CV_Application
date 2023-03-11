@@ -194,6 +194,7 @@ class Experience extends React.Component {
     }
 
     deleteButtonClicked(event) {
+        event.preventDefault();
         console.log('delete button clicked');
     }
 
