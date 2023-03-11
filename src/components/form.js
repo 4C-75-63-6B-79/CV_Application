@@ -9,11 +9,13 @@ class Form extends React.Component {
         super(props);
         this.state = {
            personalInformation: {},
-           numberOfExperience: 0,
+           numberOfExperience: 1,
            experienceInformation: [],
-           numberOfEducation: 0,
+           numberOfEducation: 1,
            educationInformation: []
         }
+        this.addOneMoreExperienceButtonClicked = this.addOneMoreExperienceButtonClicked.bind(this);
+        this.removeExperienceButtonClicked = this.removeExperienceButtonClicked.bind(this);
         this.submitButtonClicked = this.submitButtonClicked.bind(this);
         this.setPersonalInformation = this.setPersonalInformation.bind(this);
     }
@@ -24,6 +26,14 @@ class Form extends React.Component {
         this.setState({
             personalInformation: updatedPersonalInformation
         });
+    }
+
+    addOneMoreExperienceButtonClicked() {
+
+    }
+
+    removeExperienceButtonClicked() {
+
     }
 
     submitButtonClicked(event) {
