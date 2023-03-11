@@ -109,20 +109,30 @@ class PersonalInformation extends React.Component {
                 value: inputValue,
                 errorMessage: errorMessage,
             }
-        })
-        console.log(this.state);
+        });
     }
 
     inputLastNameValueChanged(event) {
         const inputValue = event.target.value;
         const isValid = event.target.validity.valid;
+        let errorMessage = '';
+        if(isValid) {
+            errorMessage = 'Input is valid';
+        } else {
+            if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
+                errorMessage = 'First letter of name should be capital.';
+            } else if(inputValue.length < 3) {
+                errorMessage = "The first name should be more than 3 character";
+            } else if(inputValue.length > 25) {
+                errorMessage = "The first name should be less than 25 characte";
+            }
+        }
         this.setState({
             "Last Name": {
                 value: inputValue,
-                errorMessage: ''
+                errorMessage: errorMessage,
             }
         });
-        console.log(this.state);
     }
 
     inputTitleValueChanged(event) {
