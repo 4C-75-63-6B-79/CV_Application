@@ -9,8 +9,10 @@ class Form extends React.Component {
         super(props);
         this.state = {
            personalInformation: {},
-           experience: [],
-           education: []
+           numberOfExperience: 0,
+           experienceInformation: [],
+           numberOfEducation: 0,
+           educationInformation: []
         }
         this.submitButtonClicked = this.submitButtonClicked.bind(this);
         this.setPersonalInformation = this.setPersonalInformation.bind(this);
