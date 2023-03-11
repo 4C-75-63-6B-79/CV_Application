@@ -138,13 +138,22 @@ class PersonalInformation extends React.Component {
     inputTitleValueChanged(event) {
         const inputValue = event.target.value;
         const isValid = event.target.validity.valid;
+        let errorMessage = '';
+        if(isValid) {
+            errorMessage = 'Input is valid';
+        } else {
+            if(!(/(Mr)|(Mrs)|(Ms)/.test(inputValue))) {
+                errorMessage = 'You can use only 3 titles Mr, Ms, Mrs.';
+            } else {
+                errorMessage = 'Use the valid titles Mr, Ms, Mrs.';
+            }
+        }
         this.setState({
             "Title": {
                 value: inputValue,
-                errorMessage: ''
+                errorMessage: errorMessage,
             }
         });
-        console.log(this.state);
     }
 
     inputAddressValueChanged(event) {
