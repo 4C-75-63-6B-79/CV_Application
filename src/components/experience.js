@@ -27,7 +27,7 @@ class Experience extends React.Component {
             {
                 type: "text",
                 name: "City",
-                placeholder: "Position",
+                placeholder: "City",
                 minlength: "3",
                 maxlength: "20",
                 pattern: "[A-Z]{1}[A-Za-z ]{2,20}",
