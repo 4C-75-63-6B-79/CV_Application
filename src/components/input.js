@@ -7,9 +7,9 @@ class Input extends React.Component {
     }
 
     render() {
-        const {type, name, placeholder, minLength, maxLength} = this.props;
+        const {type, name, placeholder, pattern, minLength, maxLength} = this.props;
         return(
-            <input type={type} name={name} placeholder={placeholder} minLength={minLength} maxLength={maxLength} required></input>
+            <input type={type} name={name} placeholder={placeholder} pattern={pattern} minLength={minLength} maxLength={maxLength} required></input>
         );
     }
 }
