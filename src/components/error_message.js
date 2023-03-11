@@ -7,8 +7,9 @@ class Error extends React.Component {
     }
 
     render() {
+        const {className, errorMessage} = this.props;
         return (
-            <span className={this.props.className}>{this.props.error}</span>
+            <span className={className}>{errorMessage}</span>
         );
     }
 }
