@@ -1,5 +1,6 @@
 import React from "react";
 import PersonalInformation from "./personal_information";
+import Experience from "./experience";
 import Button from "./button";
 
 class Form extends React.Component {
@@ -34,6 +35,7 @@ class Form extends React.Component {
         return(
             <form method={"#"}>
                 <PersonalInformation setPersonalInformation={this.setPersonalInformation}/>
+                <Experience />
                 {fromSubmitButton}
             </form>
         );
