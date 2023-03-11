@@ -57,7 +57,7 @@ class PersonalInformation extends React.Component {
                 placeholder: 'Email',
                 minlength: '7',
                 maxlength: "75",
-                pattern: "[0-9a-zA-Z]{1}[0-9a-zA-Z_]*@{1}[A-Za-z]{1,}[/.]{1}com",
+                pattern: "[0-9a-zA-Z]{1}[0-9a-zA-Z_]*@{1}[A-Za-z0-9]{1,}[/.]{1}com",
                 onChangeMethod: this.inputEmailValueChanged.bind(this)
             }
         ]
@@ -91,10 +91,12 @@ class PersonalInformation extends React.Component {
 
     inputFirstNameValueChanged(event) {
         const inputValue = event.target.value;
+        const attributeName = event.target.name;
         const isValid = event.target.validity.valid;
         let errorMessage = '';
         if(isValid) {
             errorMessage = 'Input is valid';
+            this.props.setPersonalInformation(attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of name should be capital.';
@@ -114,10 +116,12 @@ class PersonalInformation extends React.Component {
 
     inputLastNameValueChanged(event) {
         const inputValue = event.target.value;
+        const attributeName = event.target.name;
         const isValid = event.target.validity.valid;
         let errorMessage = '';
         if(isValid) {
             errorMessage = 'Input is valid';
+            this.props.setPersonalInformation(attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of name should be capital.';
@@ -137,10 +141,12 @@ class PersonalInformation extends React.Component {
 
     inputTitleValueChanged(event) {
         const inputValue = event.target.value;
+        const attributeName = event.target.name;
         const isValid = event.target.validity.valid;
         let errorMessage = '';
         if(isValid) {
             errorMessage = 'Input is valid';
+            this.props.setPersonalInformation(attributeName, inputValue);
         } else {
             if(!(/(Mr)|(Mrs)|(Ms)/.test(inputValue))) {
                 errorMessage = 'You can use only 3 titles Mr, Ms, Mrs.';
@@ -158,10 +164,12 @@ class PersonalInformation extends React.Component {
 
     inputAddressValueChanged(event) {
         const inputValue = event.target.value;
+        const attributeName = event.target.name;
         const isValid = event.target.validity.valid;
         let errorMessage = '';
         if(isValid) {
             errorMessage = 'Input is valid';
+            this.props.setPersonalInformation(attributeName, inputValue);
         } else {
             if(inputValue.length < 4) {
                 errorMessage = 'Address should have more than 4 characters.';
@@ -179,10 +187,12 @@ class PersonalInformation extends React.Component {
 
     inputPhoneNumberValueChanged(event) {
         const inputValue = event.target.value;
+        const attributeName = event.target.name;
         const isValid = event.target.validity.valid;
         let errorMessage = '';
         if(isValid) {
             errorMessage = 'Input is valid';
+            this.props.setPersonalInformation(attributeName, inputValue);
         } else {
             if((/^0/.test(inputValue.charAt(0)))) {
                 errorMessage = 'Phone number should not begin with 0.';
@@ -202,10 +212,12 @@ class PersonalInformation extends React.Component {
 
     inputEmailValueChanged(event) {
         const inputValue = event.target.value;
+        const attributeName = event.target.name;
         const isValid = event.target.validity.valid;
         let errorMessage = '';
         if(isValid) {
             errorMessage = 'Input is valid';
+            this.props.setPersonalInformation(attributeName, inputValue);
         } else { 
             if(!(/^[0-9a-zA-Z]/.test(inputValue))) {
                 errorMessage = 'Email should begin with a number or a alphabet';
