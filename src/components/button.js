@@ -10,7 +10,7 @@ class Button extends React.Component {
         const {textContent, onClickMethod} = this.props;
         
         return(
-            <button>{textContent}</button>
+            <button onClick={onClickMethod}>{textContent}</button>
         )
     }
 }
