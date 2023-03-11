@@ -36,7 +36,7 @@ class PersonalInformation extends React.Component {
                 placeholder: 'Address',
                 minlength: '4',
                 maxlength: '50',
-                pattern: '[A-Za-z0-9/,- ]{4,50}'
+                pattern: '[-/,A-Za-z0-9 ]{4,50}'
             },
             {
                 type: 'text',
