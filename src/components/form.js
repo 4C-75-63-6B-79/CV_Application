@@ -24,7 +24,7 @@ class Form extends React.Component {
     }
 
     submitButtonClicked(event) {
-        // event.preventDefault();
+        event.preventDefault();
         console.log(this.state);
     }
 
