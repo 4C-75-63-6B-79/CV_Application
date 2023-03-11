@@ -55,9 +55,9 @@ class PersonalInformation extends React.Component {
                 type: "email",
                 name: 'Email',
                 placeholder: 'Email',
-                minlength: '10',
-                maxlength: "10",
-                pattern: "[0-9a-zA-Z_]{1,}@{1}[A-Za-z]{1,}[/.]{1}com",
+                minlength: '7',
+                maxlength: "75",
+                pattern: "[0-9a-zA-Z]{1}[0-9a-zA-Z_]*@{1}[A-Za-z]{1,}[/.]{1}com",
                 onChangeMethod: this.inputEmailValueChanged.bind(this)
             }
         ]
@@ -203,13 +203,24 @@ class PersonalInformation extends React.Component {
     inputEmailValueChanged(event) {
         const inputValue = event.target.value;
         const isValid = event.target.validity.valid;
+        let errorMessage = '';
+        if(isValid) {
+            errorMessage = 'Input is valid';
+        } else { 
+            if(!(/^[0-9a-zA-Z]/.test(inputValue))) {
+                errorMessage = 'Email should begin with a number or a alphabet';
+            } else if(!(/[/.]com$/.test(inputValue))) {
+                errorMessage = "Email should end with '.com'.";
+            } else {
+                errorMessage = "Please enter a email in following format 'abc@mail.com'";
+            }
+        }
         this.setState({
             "Email": {
                 value: inputValue,
-                errorMessage: ''
+                errorMessage: errorMessage,
             }
         });
-        console.log(this.state);
     }
 
     render() {
