@@ -180,13 +180,24 @@ class PersonalInformation extends React.Component {
     inputPhoneNumberValueChanged(event) {
         const inputValue = event.target.value;
         const isValid = event.target.validity.valid;
+        let errorMessage = '';
+        if(isValid) {
+            errorMessage = 'Input is valid';
+        } else {
+            if((/^0/.test(inputValue.charAt(0)))) {
+                errorMessage = 'Phone number should not begin with 0.';
+            } else if(inputValue.length < 10) {
+                errorMessage = "Phone number should have 10 digits.";
+            } else if(inputValue.length > 10) {
+                errorMessage = "Phone number should have 10 digits.";
+            }
+        }
         this.setState({
             "Phone Number": {
                 value: inputValue,
-                errorMessage: ''
+                errorMessage: errorMessage,
             }
         });
-        console.log(this.state);
     }
 
     inputEmailValueChanged(event) {
