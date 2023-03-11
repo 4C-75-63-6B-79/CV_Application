@@ -75,6 +75,7 @@ class Experience extends React.Component {
                 errorMessage: ""
             },
         }
+        this.deleteButtonClicked = this.deleteButtonClicked.bind(this);
     }
 
     inputPositionValueChanged(event) {
@@ -195,7 +196,7 @@ class Experience extends React.Component {
 
     deleteButtonClicked(event) {
         event.preventDefault();
-        console.log('delete button clicked');
+        this.props.onClickDeleteExperience();
     }
 
     render() {
