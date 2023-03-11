@@ -55,12 +55,20 @@ class PersonalInformation extends React.Component {
                 pattern: "[0-9a-zA-Z_]{1,}@{1}[A-Za-z]{1,}[/.]{1}com"
             }
         ]
+        this.state = {
+            firstName: {
+                value: '',
+                errorMessage: '',
+            }
+        }
     }
+
 
     render() {
         const inputElements = this.htmlInputProperties.map((inputElementProp) => {
             const {type, name, placeholder, minlength, maxlength, pattern} = inputElementProp;
-            return <Input key={name} type={type} name={name} placeholder={placeholder} pattern={pattern} minlength={minlength} maxlength={maxlength}/>
+            const {value, errorMessage} = this.state;
+            return <Input key={name} type={type} name={name} placeholder={placeholder} value={value} pattern={pattern} minlength={minlength} maxlength={maxlength} errorMessage={errorMessage}/>
         });
         return(
             <fieldset>
