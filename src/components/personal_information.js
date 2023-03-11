@@ -159,13 +159,22 @@ class PersonalInformation extends React.Component {
     inputAddressValueChanged(event) {
         const inputValue = event.target.value;
         const isValid = event.target.validity.valid;
+        let errorMessage = '';
+        if(isValid) {
+            errorMessage = 'Input is valid';
+        } else {
+            if(inputValue.length < 4) {
+                errorMessage = 'Address should have more than 4 characters.';
+            } else if(inputValue.length > 50){
+                errorMessage = 'Address should have less than 51 characters.';
+            }
+        }
         this.setState({
             "Address": {
                 value: inputValue,
-                errorMessage: ''
+                errorMessage: errorMessage,
             }
         });
-        console.log(this.state);
     }
 
     inputPhoneNumberValueChanged(event) {
