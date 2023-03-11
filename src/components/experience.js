@@ -80,7 +80,7 @@ class Experience extends React.Component {
         const inputValue = event.target.value;
         const attributeValue = event.target.name;
         const isValid = event.target.validity.valid;
-        let errorMessage = ""
+        let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
         } else {
@@ -101,25 +101,49 @@ class Experience extends React.Component {
     }
 
     inputCompanyValueChanged(event) {
-        console.log(event.target.validity.valid);
         const inputValue = event.target.value;
         const attributeValue = event.target.name;
+        const isValid = event.target.validity.valid;
+        let errorMessage = "";
+        if(isValid) {
+            errorMessage = "Input is valid.";
+        } else {
+            if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
+                errorMessage = 'First letter of company name should be capital.';
+            } else if(inputValue.length < 3) {
+                errorMessage = "Company name should be atleast 3 characters long.";
+            } else if(inputValue.length > 20) {
+                errorMessage = "Company name should be atmost 20 characters long.";
+            }
+        }
         this.setState({
             "Company": {
                 value: inputValue,
-                errorMessage: ""
+                errorMessage: errorMessage
             }
         });
     }
 
     inputCityValueChanged(event) {
-        console.log(event.target.validity.valid);
         const inputValue = event.target.value;
         const attributeValue = event.target.name;
+        const isValid = event.target.validity.valid;
+        let errorMessage = "";
+        if(isValid) {
+            errorMessage = "Input is valid.";
+        } else {
+            if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
+                errorMessage = 'First letter of city name should be capital.';
+            } else if(inputValue.length < 3) {
+                errorMessage = "City name should be atleast 3 characters long.";
+            } else if(inputValue.length > 20) {
+                errorMessage = "City name should be atmost 20 characters long.";
+            }
+        }
         this.setState({
             "City": {
                 value: inputValue,
-                errorMessage: ""
+                errorMessage: errorMessage
             }
         });
     }
