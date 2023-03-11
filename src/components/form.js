@@ -33,7 +33,10 @@ class Form extends React.Component {
     }
 
     removeExperienceButtonClicked() {
-
+        const updateNumberOfExperience = this.state.numberOfExperience - 1;
+        this.setState({
+            numberOfExperience: updateNumberOfExperience
+        });
     }
 
     submitButtonClicked(event) {
@@ -43,7 +46,7 @@ class Form extends React.Component {
 
     render() {
         const experienceElemets = Array.from({length: this.state.numberOfExperience}, (v, i) => i).map((value) => {
-            return <Experience key={"experienceIndexv"+value} />
+            return <Experience key={"experienceIndexv"+value} onClickDeleteExperience={this.removeExperienceButtonClicked}/>
         });
         const fromSubmitButton = <Button textContent="Submit" onClickMethod={this.submitButtonClicked}/>;
 
