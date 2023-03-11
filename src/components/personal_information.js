@@ -10,9 +10,9 @@ class PersonalInformation extends React.Component {
                 type: "text",
                 name: "First Name",
                 placeholder: 'First Name',
-                minlength: '1',
+                minlength: '3',
                 maxlength: '25',
-                pattern: '[A-Z]{1}[A-Za-z]{1,24}',
+                pattern: '[A-Z]{1}[A-Za-z]{2,24}',
                 onChangeMethod: this.inputFirstNameValueChanged.bind(this)
             },
             {
@@ -62,7 +62,27 @@ class PersonalInformation extends React.Component {
             }
         ]
         this.state = {
-            firstName: {
+            "First Name": {
+                value: '',
+                errorMessage: '',
+            },
+            "Last Name": {
+                value: '',
+                errorMessage: '',
+            },
+            "Title": {
+                value: '',
+                errorMessage: '',
+            },
+            "Address": {
+                value: '',
+                errorMessage: '',
+            },
+            "Phone Number": {
+                value: '',
+                errorMessage: '',
+            },
+            "Email": {
                 value: '',
                 errorMessage: '',
             }
@@ -70,33 +90,93 @@ class PersonalInformation extends React.Component {
     }
 
     inputFirstNameValueChanged(event) {
-        console.log(this);
+        const inputValue = event.target.value;
+        const isValid = event.target.validity.valid;
+        let errorMessage = '';
+        if(isValid) {
+            errorMessage = 'Input is valid';
+        } else {
+            if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
+                errorMessage = 'First letter of name should be capital.';
+            } else if(inputValue.length < 3) {
+                errorMessage = "The first name should be more than 3 character";
+            } else if(inputValue.length > 25) {
+                errorMessage = "The first name should be less than 25 characte";
+            }
+        }
+        this.setState({
+            "First Name": {
+                value: inputValue,
+                errorMessage: errorMessage,
+            }
+        })
+        console.log(this.state);
     }
 
     inputLastNameValueChanged(event) {
-        console.log(this);
+        const inputValue = event.target.value;
+        const isValid = event.target.validity.valid;
+        this.setState({
+            "Last Name": {
+                value: inputValue,
+                errorMessage: ''
+            }
+        });
+        console.log(this.state);
     }
 
     inputTitleValueChanged(event) {
-        console.log(this);
+        const inputValue = event.target.value;
+        const isValid = event.target.validity.valid;
+        this.setState({
+            "Title": {
+                value: inputValue,
+                errorMessage: ''
+            }
+        });
+        console.log(this.state);
     }
 
     inputAddressValueChanged(event) {
-        console.log(this);
+        const inputValue = event.target.value;
+        const isValid = event.target.validity.valid;
+        this.setState({
+            "Address": {
+                value: inputValue,
+                errorMessage: ''
+            }
+        });
+        console.log(this.state);
     }
 
     inputPhoneNumberValueChanged(event) {
-        console.log(this);
+        const inputValue = event.target.value;
+        const isValid = event.target.validity.valid;
+        this.setState({
+            "Phone Number": {
+                value: inputValue,
+                errorMessage: ''
+            }
+        });
+        console.log(this.state);
     }
 
     inputEmailValueChanged(event) {
-        console.log(this);
+        const inputValue = event.target.value;
+        const isValid = event.target.validity.valid;
+        this.setState({
+            "Email": {
+                value: inputValue,
+                errorMessage: ''
+            }
+        });
+        console.log(this.state);
     }
 
     render() {
         const inputElements = this.htmlInputProperties.map((inputElementProp) => {
             const {type, name, placeholder, minlength, maxlength, pattern, onChangeMethod} = inputElementProp;
-            const {value, errorMessage} = this.state;
+            const {value, errorMessage} = this.state[name];
             return <Input key={name} type={type} name={name} placeholder={placeholder} value={value} pattern={pattern} minlength={minlength} maxlength={maxlength} errorMessage={errorMessage} onChangeMethod={onChangeMethod}/>
         });
         return(
