@@ -136,7 +136,7 @@ class Form extends React.Component {
         });
         const fromSubmitButton = <Button textContent="Submit" onClickMethod={this.submitButtonClicked}/>;
         const addOneMoreExperienceButton = <Button textContent="Add" onClickMethod={this.addOneMoreExperienceButtonClicked}/>;
-
+        const addOneMoreEducationButton = <Button textContent="Add" onClickMethod={this.addOneMoreEducationButtonClicked}/>;
         return(
             <form method={"#"}>
                 <PersonalInformation setPersonalInformation={this.setPersonalInformation}/>
@@ -148,7 +148,7 @@ class Form extends React.Component {
                 <fieldset>
                     <legend>{"Education"}</legend>
                     
-
+                    {addOneMoreEducationButton}
                 </fieldset>
                 {fromSubmitButton}
             </form>
