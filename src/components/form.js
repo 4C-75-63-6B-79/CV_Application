@@ -53,7 +53,10 @@ class Form extends React.Component {
         return(
             <form method={"#"}>
                 <PersonalInformation setPersonalInformation={this.setPersonalInformation}/>
-                {experienceElemets}
+                <fieldset>
+                    <legend>{"Experience"}</legend>
+                    {experienceElemets}
+                </fieldset>
                 {fromSubmitButton}
             </form>
         );
