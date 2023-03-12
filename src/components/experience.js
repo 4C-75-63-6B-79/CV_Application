@@ -80,7 +80,8 @@ class Experience extends React.Component {
 
     inputPositionValueChanged(event) {
         const inputValue = event.target.value;
-        const attributeValue = event.target.name;
+        const attributeName = event.target.name;
+        const experienceIndex = this.props.experienceIndex;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
@@ -104,7 +105,8 @@ class Experience extends React.Component {
 
     inputCompanyValueChanged(event) {
         const inputValue = event.target.value;
-        const attributeValue = event.target.name;
+        const attributeName = event.target.name;
+        const experienceIndex = this.props.experienceIndex;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
@@ -128,7 +130,8 @@ class Experience extends React.Component {
 
     inputCityValueChanged(event) {
         const inputValue = event.target.value;
-        const attributeValue = event.target.name;
+        const attributeName = event.target.name;
+        const experienceIndex = this.props.experienceIndex;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
@@ -152,7 +155,8 @@ class Experience extends React.Component {
 
     inputFromValueChanged(event) {
         const inputValue = event.target.value;
-        const attributeValue = event.target.name;
+        const attributeName = event.target.name;
+        const experienceIndex = this.props.experienceIndex;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
@@ -174,7 +178,8 @@ class Experience extends React.Component {
 
     inputToValueChanged(event) {
         const inputValue = event.target.value;
-        const attributeValue = event.target.name;
+        const attributeName = event.target.name;
+        const experienceIndex = this.props.experienceIndex;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
