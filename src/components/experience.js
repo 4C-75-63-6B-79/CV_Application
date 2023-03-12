@@ -81,12 +81,12 @@ class Experience extends React.Component {
     inputPositionValueChanged(event) {
         const inputValue = event.target.value;
         const attributeName = event.target.name;
-        const experienceIndex = this.props.experienceIndex;
+        const experienceId = this.props.experienceId;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
-            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
+            this.props.setExperienceInformation(experienceId, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of position should be capital.';
@@ -107,12 +107,12 @@ class Experience extends React.Component {
     inputCompanyValueChanged(event) {
         const inputValue = event.target.value;
         const attributeName = event.target.name;
-        const experienceIndex = this.props.experienceIndex;
+        const experienceId = this.props.experienceId;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
-            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
+            this.props.setExperienceInformation(experienceId, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of company name should be capital.';
@@ -133,12 +133,12 @@ class Experience extends React.Component {
     inputCityValueChanged(event) {
         const inputValue = event.target.value;
         const attributeName = event.target.name;
-        const experienceIndex = this.props.experienceIndex;
+        const experienceId = this.props.experienceId;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
-            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
+            this.props.setExperienceInformation(experienceId, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of city name should be capital.';
@@ -159,12 +159,12 @@ class Experience extends React.Component {
     inputFromValueChanged(event) {
         const inputValue = event.target.value;
         const attributeName = event.target.name;
-        const experienceIndex = this.props.experienceIndex;
+        const experienceId = this.props.experienceId;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
-            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
+            this.props.setExperienceInformation(experienceId, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = "First character of month should be capital letter."
@@ -183,12 +183,12 @@ class Experience extends React.Component {
     inputToValueChanged(event) {
         const inputValue = event.target.value;
         const attributeName = event.target.name;
-        const experienceIndex = this.props.experienceIndex;
+        const experienceId = this.props.experienceId;
         const isValid = event.target.validity.valid;
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
-            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
+            this.props.setExperienceInformation(experienceId, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = "First character of month should be capital letter."
