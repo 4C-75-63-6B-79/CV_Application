@@ -49,10 +49,12 @@ class Form extends React.Component {
         });
     }
 
-    removeExperienceButtonClicked() {
-        const updateNumberOfExperience = this.state.numberOfExperience - 1;
+    removeExperienceButtonClicked(experienceIndex) {
+        const updateExperiencePresent = this.state.allExperienceIndexPresent;
+        const indexOfExperienceToBeRemoved = updateExperiencePresent.indexOf(experienceIndex);
+        updateExperiencePresent.splice(indexOfExperienceToBeRemoved, 1);
         this.setState({
-            numberOfExperience: updateNumberOfExperience
+            allExperienceIndexPresent: updateExperiencePresent
         });
     }
 
