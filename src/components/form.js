@@ -9,7 +9,7 @@ class Form extends React.Component {
         super(props);
         this.state = {
            personalInformation: {},
-           allExperienceIndexPresent: [],
+           experienceIds: [0],
            experienceInformation: [],
            numberOfEducation: 1,
            educationInformation: []
@@ -41,20 +41,20 @@ class Form extends React.Component {
 
     addOneMoreExperienceButtonClicked(event) {
         event.preventDefault();
-        const experienceIndexPresent = this.state.allExperienceIndexPresent;
-        const newExperienceIndex = experienceIndexPresent[-1]+1 || 0;
-        experienceIndexPresent.push(newExperienceIndex);
+        const experienceIdPresent = this.state.experienceIds;
+        const newExperienceId = experienceIdPresent[-1]+1 || 0;
+        experienceIdPresent.push(newExperienceId);
         this.setState({
-            allExperienceIndexPresent: experienceIndexPresent
+            experienceIds: experienceIdPresent
         });
     }
 
-    removeExperienceButtonClicked(experienceIndex) {
-        const updateExperiencePresent = this.state.allExperienceIndexPresent;
-        const indexOfExperienceToBeRemoved = updateExperiencePresent.indexOf(experienceIndex);
-        updateExperiencePresent.splice(indexOfExperienceToBeRemoved, 1);
+    removeExperienceButtonClicked(experienceId) {
+        const updatedExperienceIds = this.state.experienceIds;
+        const indexOfExperienceToBeRemoved = updatedExperienceIds.indexOf(experienceId);
+        updatedExperienceIds.splice(indexOfExperienceToBeRemoved, 1);
         this.setState({
-            allExperienceIndexPresent: updateExperiencePresent
+            allExperienceIndexPresent: updatedExperienceIds
         });
     }
 
@@ -64,8 +64,8 @@ class Form extends React.Component {
     }
 
     render() {
-        const experienceElemets = Array.from({length: this.state.numberOfExperience}, (v, i) => i).map((value) => {
-            return <Experience key={"experienceIndex"+value} experienceIndex={value} onClickDeleteExperience={this.removeExperienceButtonClicked} setExperienceInformation={this.setExperienceInformation}/>;
+        const experienceElemets = this.state.experienceIds.map((experieceId) =>{
+            return <Experience key={"experienceIndex"+experieceId} experienceId={experieceId} onClickDeleteExperience={this.removeExperienceButtonClicked} setExperienceInformation={this.setExperienceInformation}/>;
         });
         const fromSubmitButton = <Button textContent="Submit" onClickMethod={this.submitButtonClicked}/>;
         const addOneMoreExperienceButton = <Button textContent="Add" onClickMethod={this.addOneMoreExperienceButtonClicked}/>;
