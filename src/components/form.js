@@ -113,7 +113,7 @@ class Form extends React.Component {
     }
 
     updateEducationIds(educationId) {
-        const updatedEducationIds = this.state.experienceIds;
+        const updatedEducationIds = this.state.educationIds;
         const indexOfEducationToBeRemoved = updatedEducationIds.indexOf(educationId);
         updatedEducationIds.splice(indexOfEducationToBeRemoved, 1);
         this.setState({
@@ -144,7 +144,7 @@ class Form extends React.Component {
         return(
             <form method={"#"}>
                 <PersonalInformation setPersonalInformation={this.setPersonalInformation}/>
-                <fieldset>
+                <fieldset >
                     <legend>{"Experience"}</legend>
                     {experienceElements}
                     {addOneMoreExperienceButton}
