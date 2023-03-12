@@ -9,7 +9,7 @@ class Form extends React.Component {
         super(props);
         this.state = {
            personalInformation: {},
-           numberOfExperience: 1,
+           allExperienceIndexPresent: [],
            experienceInformation: [],
            numberOfEducation: 1,
            educationInformation: []
@@ -41,9 +41,11 @@ class Form extends React.Component {
 
     addOneMoreExperienceButtonClicked(event) {
         event.preventDefault();
-        const updateNumberOfExperience = this.state.numberOfExperience + 1;
+        const experienceIndexPresent = this.state.allExperienceIndexPresent;
+        const newExperienceIndex = experienceIndexPresent[-1]+1 || 0;
+        experienceIndexPresent.push(newExperienceIndex);
         this.setState({
-            numberOfExperience: updateNumberOfExperience
+            allExperienceIndexPresent: experienceIndexPresent
         });
     }
 
