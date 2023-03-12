@@ -42,7 +42,8 @@ class Form extends React.Component {
     addOneMoreExperienceButtonClicked(event) {
         event.preventDefault();
         const experienceIdPresent = this.state.experienceIds;
-        const newExperienceId = experienceIdPresent[-1]+1 || 0;
+        const lastExperienceId = experienceIdPresent[experienceIdPresent.length-1] || 0;
+        const newExperienceId = lastExperienceId + 1;
         experienceIdPresent.push(newExperienceId);
         this.setState({
             experienceIds: experienceIdPresent
