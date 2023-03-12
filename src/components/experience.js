@@ -86,6 +86,7 @@ class Experience extends React.Component {
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
+            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of position should be capital.';
@@ -111,6 +112,7 @@ class Experience extends React.Component {
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
+            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of company name should be capital.';
@@ -136,6 +138,7 @@ class Experience extends React.Component {
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
+            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of city name should be capital.';
@@ -161,6 +164,7 @@ class Experience extends React.Component {
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
+            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = "First character of month should be capital letter."
@@ -184,6 +188,7 @@ class Experience extends React.Component {
         let errorMessage = "";
         if(isValid) {
             errorMessage = "Input is valid.";
+            this.props.setExperienceInformation(experienceIndex, attributeName, inputValue);
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = "First character of month should be capital letter."
