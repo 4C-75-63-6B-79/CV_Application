@@ -1,4 +1,5 @@
 import React from "react";
+import CVHeader from "./cv_header";
 
 class CV extends React.Component {
 
@@ -9,7 +10,7 @@ class CV extends React.Component {
     render() {
         return(
             <div>
-                
+                <CVHeader />
             </div>
         )
     }
