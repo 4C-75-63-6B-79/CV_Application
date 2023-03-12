@@ -10,7 +10,7 @@ class Form extends React.Component {
         this.state = {
            personalInformation: {},
            experienceIds: [0],
-           experienceInformation: [],
+           experienceInformation: {},
            numberOfEducation: 1,
            educationInformation: []
         }
@@ -20,6 +20,7 @@ class Form extends React.Component {
         this.setPersonalInformation = this.setPersonalInformation.bind(this);
         this.setExperienceInformation = this.setExperienceInformation.bind(this);
         this.updateExperienceIds = this.updateExperienceIds.bind(this);
+        this.updateExperienceInformation = this.updateExperienceInformation.bind(this);
     }
 
     setPersonalInformation(attributeName, attributeValue) {
@@ -30,11 +31,11 @@ class Form extends React.Component {
         });
     }
 
-    setExperienceInformation(experienceIndex, attributeName, attributeValue) {
+    setExperienceInformation(experienceId, attributeName, attributeValue) {
         const experienceInformation = this.state.experienceInformation;
-        const experienceAtIndex = experienceInformation[experienceIndex] || {};
+        const experienceAtIndex = experienceInformation[experienceId] || {};
         experienceAtIndex[attributeName] = attributeValue;
-        experienceInformation[experienceIndex] = experienceAtIndex;
+        experienceInformation[experienceId] = experienceAtIndex;
         this.setState({
             experienceInformation: experienceInformation,
         });
@@ -51,8 +52,12 @@ class Form extends React.Component {
         });
     }
 
-    removeExperienceButtonClicked(experienceId) {
-        this.updateExperienceIds(experienceId);
+    updateExperienceInformation(experienceId) {
+        const updatedExperienceInformation = this.state.experienceInformation;
+        delete updatedExperienceInformation[experienceId];
+        this.setState({
+            experienceInformation: updatedExperienceInformation
+        });
     }
 
     updateExperienceIds(experienceId) {
@@ -62,6 +67,11 @@ class Form extends React.Component {
         this.setState({
             allExperienceIndexPresent: updatedExperienceIds
         });
+    }
+
+    removeExperienceButtonClicked(experienceId) {
+        this.updateExperienceIds(experienceId);
+        this.updateExperienceInformation(experienceId);
     }
 
     submitButtonClicked(event) {
