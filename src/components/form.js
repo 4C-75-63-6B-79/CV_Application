@@ -82,13 +82,13 @@ class Form extends React.Component {
         this.updateExperienceInformation(experienceId);
     }
 
-    setEducationInformation(experienceId, attributeName, attributeValue) {
-        const experienceInformation = this.state.experienceInformation;
-        const experienceAtIndex = experienceInformation[experienceId] || {};
-        experienceAtIndex[attributeName] = attributeValue;
-        experienceInformation[experienceId] = experienceAtIndex;
+    setEducationInformation(educationId, attributeName, attributeValue) {
+        const educationInformation = this.state.educationInformation;
+        const educationAtIndex = educationInformation[educationId] || {};
+        educationAtIndex[attributeName] = attributeValue;
+        educationInformation[educationId] = educationAtIndex;
         this.setState({
-            experienceInformation: experienceInformation,
+            educationInformation: educationInformation,
         });
     }
 
