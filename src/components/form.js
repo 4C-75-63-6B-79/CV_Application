@@ -28,8 +28,12 @@ class Form extends React.Component {
         });
     }
 
-    addOneMoreExperienceButtonClicked() {
-
+    addOneMoreExperienceButtonClicked(event) {
+        event.preventDefault();
+        const updateNumberOfExperience = this.state.numberOfExperience + 1;
+        this.setState({
+            numberOfExperience: updateNumberOfExperience
+        });
     }
 
     removeExperienceButtonClicked() {
