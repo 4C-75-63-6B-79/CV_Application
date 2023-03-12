@@ -206,11 +206,10 @@ class Experience extends React.Component {
             return <Input key={name} type={type} name={name} placeholder={placeholder} value={value} pattern={pattern} minlength={minlength} maxlength={maxlength} errorMessage={errorMessage} onChangeMethod={onChangeMethod}/>
         });
         return(
-            <fieldset>
-                <legend>{"Experience"}</legend>
+            <section>
                 {inputElements}
                 <Button textContent={"Delete"} onClickMethod={this.deleteButtonClicked}/>
-            </fieldset>
+            </section>
         )
     }
 }
