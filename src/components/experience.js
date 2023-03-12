@@ -206,7 +206,7 @@ class Experience extends React.Component {
 
     deleteButtonClicked(event) {
         event.preventDefault();
-        this.props.onClickDeleteExperience();
+        this.props.onClickDeleteExperience(this.props.experienceId);
     }
 
     render() {
