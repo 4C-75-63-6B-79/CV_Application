@@ -94,12 +94,12 @@ class Form extends React.Component {
 
     addOneMoreEducationButtonClicked(event) {
         event.preventDefault();
-        const experienceIdPresent = this.state.experienceIds;
-        const lastExperienceId = experienceIdPresent.length === 0 ? -1 : experienceIdPresent[experienceIdPresent.length-1];
-        const newExperienceId = lastExperienceId + 1;
-        experienceIdPresent.push(newExperienceId);
+        const educationIdPresent = this.state.educationIds;
+        const lastEducationId = educationIdPresent.length === 0 ? -1 : educationIdPresent[educationIdPresent.length-1];
+        const newEducationId = lastEducationId + 1;
+        educationIdPresent.push(newEducationId);
         this.setState({
-            experienceIds: experienceIdPresent
+            educationIds: educationIdPresent
         });
     }
 
