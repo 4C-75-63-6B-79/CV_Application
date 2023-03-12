@@ -65,7 +65,7 @@ class Form extends React.Component {
         const indexOfExperienceToBeRemoved = updatedExperienceIds.indexOf(experienceId);
         updatedExperienceIds.splice(indexOfExperienceToBeRemoved, 1);
         this.setState({
-            allExperienceIndexPresent: updatedExperienceIds
+            experienceIds: updatedExperienceIds
         });
     }
 
