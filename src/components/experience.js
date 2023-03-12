@@ -90,6 +90,8 @@ class Experience extends React.Component {
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of position should be capital.';
+            } else if(/[^A-Za-z ]/.test(inputValue)) {
+                errorMessage = 'Position can only have alphabets and spaces.'
             } else if(inputValue.length < 3) {
                 errorMessage = "Position should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
@@ -116,6 +118,8 @@ class Experience extends React.Component {
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of company name should be capital.';
+            } else if(/[^A-Za-z ]/.test(inputValue)) {
+                errorMessage = 'Company name can only have alphabets and spaces.'
             } else if(inputValue.length < 3) {
                 errorMessage = "Company name should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
@@ -142,6 +146,8 @@ class Experience extends React.Component {
         } else {
             if(!(/^[A-Z]/.test(inputValue.charAt(0)))) {
                 errorMessage = 'First letter of city name should be capital.';
+            } else if(/[^A-Za-z ]/.test(inputValue)) {
+                errorMessage = 'City name can only have alphabets and spaces.'
             } else if(inputValue.length < 3) {
                 errorMessage = "City name should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
