@@ -18,6 +18,7 @@ class Form extends React.Component {
         this.removeExperienceButtonClicked = this.removeExperienceButtonClicked.bind(this);
         this.submitButtonClicked = this.submitButtonClicked.bind(this);
         this.setPersonalInformation = this.setPersonalInformation.bind(this);
+        this.setExperienceInformation = this.setExperienceInformation.bind(this);
     }
 
     setPersonalInformation(attributeName, attributeValue) {
@@ -29,7 +30,13 @@ class Form extends React.Component {
     }
 
     setExperienceInformation(experienceIndex, attributeName, attributeValue) {
-        console.log(experienceIndex, attributeName, attributeValue);
+        const experienceInformation = this.state.experienceInformation;
+        const experienceAtIndex = experienceInformation[experienceIndex] || {};
+        experienceAtIndex[attributeName] = attributeValue;
+        experienceInformation[experienceIndex] = experienceAtIndex;
+        this.setState({
+            experienceInformation: experienceInformation,
+        });
     }
 
     addOneMoreExperienceButtonClicked(event) {
