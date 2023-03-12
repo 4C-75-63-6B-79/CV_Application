@@ -2,6 +2,7 @@ import React from "react";
 import PersonalInformation from "./personal_information";
 import Experience from "./experience";
 import Button from "./button";
+import Education from "./education";
 
 class Form extends React.Component {
 
@@ -131,8 +132,11 @@ class Form extends React.Component {
     }
 
     render() {
-        const experienceElemets = this.state.experienceIds.map((experienceId) =>{
+        const experienceElements = this.state.experienceIds.map((experienceId) =>{
             return <Experience key={"experienceIndex"+experienceId} experienceId={experienceId} onClickDeleteExperience={this.removeExperienceButtonClicked} setExperienceInformation={this.setExperienceInformation}/>;
+        });
+        const educationElements = this.state.educationIds.map((educationId) =>{
+            return <Education key={"educationIndex"+educationId} educationId={educationId} onClickDeleteEducation={this.removeEducationButtonClicked} setEducationInformation={this.setEducationInformation}/>;
         });
         const fromSubmitButton = <Button textContent="Submit" onClickMethod={this.submitButtonClicked}/>;
         const addOneMoreExperienceButton = <Button textContent="Add" onClickMethod={this.addOneMoreExperienceButtonClicked}/>;
@@ -142,12 +146,12 @@ class Form extends React.Component {
                 <PersonalInformation setPersonalInformation={this.setPersonalInformation}/>
                 <fieldset>
                     <legend>{"Experience"}</legend>
-                    {experienceElemets}
+                    {experienceElements}
                     {addOneMoreExperienceButton}
                 </fieldset>
                 <fieldset>
                     <legend>{"Education"}</legend>
-                    
+                    {educationElements}
                     {addOneMoreEducationButton}
                 </fieldset>
                 {fromSubmitButton}
