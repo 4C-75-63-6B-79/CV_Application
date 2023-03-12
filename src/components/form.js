@@ -103,26 +103,26 @@ class Form extends React.Component {
         });
     }
 
-    updateEducationInformation(experienceId) {
-        const updatedExperienceInformation = this.state.experienceInformation;
-        delete updatedExperienceInformation[experienceId];
+    updateEducationInformation(educationId) {
+        const updatedEducationInformation = this.state.educationInformation;
+        delete updatedEducationInformation[educationId];
         this.setState({
-            experienceInformation: updatedExperienceInformation
+            educationInformation: updatedEducationInformation
         });
     }
 
-    updateEducationIds(experienceId) {
-        const updatedExperienceIds = this.state.experienceIds;
-        const indexOfExperienceToBeRemoved = updatedExperienceIds.indexOf(experienceId);
-        updatedExperienceIds.splice(indexOfExperienceToBeRemoved, 1);
+    updateEducationIds(educationId) {
+        const updatedEducationIds = this.state.experienceIds;
+        const indexOfEducationToBeRemoved = updatedEducationIds.indexOf(educationId);
+        updatedEducationIds.splice(indexOfEducationToBeRemoved, 1);
         this.setState({
-            experienceIds: updatedExperienceIds
+            educationIds: updatedEducationIds
         });
     }
 
-    removeEducationButtonClicked(experienceId) {
-        this.updateExperienceIds(experienceId);
-        this.updateExperienceInformation(experienceId);
+    removeEducationButtonClicked(educationId) {
+        this.updateEducationIds(educationId);
+        this.updateEducationInformation(educationId);
     }
 
     submitButtonClicked(event) {
