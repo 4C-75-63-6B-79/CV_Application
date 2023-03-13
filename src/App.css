@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ddd;
+    font-family: sans-serif;
+}
+
+.appHeader {
+    background-color: #555;
+    padding: 1rem;
+    color: #eee;
+    font-size: 32px;
+    font-weight: 900;
+    display: grid;
+    place-content: center;
+}
+
+form {
+    margin: 5% 10%;
+    background-color: #efefef;
+    border-radius: 8px;
+    box-shadow: #bbb 0px 5px 15px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+fieldset {
+    border: none;
+    width: 100%;
+}
+
+fieldset > div,
+fieldset > section > div {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+legend {
+    padding: 0.3rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 0.4rem 0.3rem;
+    outline: none;
+    border: none;
+    font-size: 16px;
+}
+
+input:focus:valid,
+input:not(:focus):valid {
+    border: 2px solid limegreen;
+    border-radius: 4px 4px 0 0;
+}
+
+input:focus:invalid,
+input:not(:focus):invalid {
+    border: 2px solid lightcoral;
+    border-radius: 4px 4px 0 0;
+}
+
+input:focus:placeholder-shown,
+input:not(:focus):placeholder-shown {
+    border: 1px solid grey;
+    border-radius: 4px
+}
+
+span {
+    flex: 1;
+    font-weight: bold;
+    background-color: #efefef;
+} 
+
+input:focus:valid + span,
+input:not(:focus):valid + span {
+    padding: 0.3rem;
+    font-size: 14px;
+    color: limegreen;
+    border: 2px solid limegreen;
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+}
+
+input:focus:invalid + span,
+input:not(:focus):invalid + span {
+    padding: 0.3rem;
+    font-size: 14px;
+    color: lightcoral;
+    border: 2px solid lightcoral;
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+}
+
+input:not(:focus):placeholder-shown + span,
+input:focus:placeholder-shown + span {
+    padding: 0;
+    border:none;
+}
+
+button {
+    width: 100%;
+    font-size: 18px;
+    padding: 0.5rem;
+    margin: 0.4rem 0;
+    background-color: #393939;
+    color: #eee;
+    text-align: center;
+    border: none; 
+    border-radius: 4px;
+    outline: none;
+}
+
+button:hover {
+    background-color: #292929;
+}
