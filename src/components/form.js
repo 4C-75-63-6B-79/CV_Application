@@ -29,7 +29,6 @@ class Form extends React.Component {
         this.updateEducationIds = this.updateEducationIds.bind(this);
         this.updateEducationInformation = this.updateEducationInformation.bind(this);
 
-        this.resetButtonClicked = this.resetButtonClicked.bind(this);
     }
 
     setPersonalInformation(attributeName, attributeValue) {
@@ -131,11 +130,6 @@ class Form extends React.Component {
         this.updateEducationInformation(educationId);
     }
 
-    resetButtonClicked(event) {
-        // event.preventDefault();
-        // console.log(this.state);
-    }
-
     render() {
         const experienceElements = this.state.experienceIds.map((experienceId) =>{
             return <Experience key={"experienceIndex"+experienceId} experienceId={experienceId} onClickDeleteExperience={this.removeExperienceButtonClicked} setExperienceInformation={this.setExperienceInformation}/>;
@@ -143,7 +137,6 @@ class Form extends React.Component {
         const educationElements = this.state.educationIds.map((educationId) =>{
             return <Education key={"educationIndex"+educationId} educationId={educationId} onClickDeleteEducation={this.removeEducationButtonClicked} setEducationInformation={this.setEducationInformation}/>;
         });
-        const fromResetButton = <Button type={"reset"} textContent="Reset" onClickMethod={this.resetButtonClicked}/>;
         const addOneMoreExperienceButton = <Button textContent="Add" onClickMethod={this.addOneMoreExperienceButtonClicked}/>;
         const addOneMoreEducationButton = <Button textContent="Add" onClickMethod={this.addOneMoreEducationButtonClicked}/>;
         return(
@@ -159,7 +152,7 @@ class Form extends React.Component {
                     {educationElements}
                     {addOneMoreEducationButton}
                 </fieldset>
-                {fromResetButton}
+                <input type={"reset"} className={"button"} value={"Reset"}/>
             </form>
         );
     }
