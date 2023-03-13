@@ -7,12 +7,16 @@ class CVExperience extends React.Component {
     }
 
     render() {
+        const position = this.props.information['Position'] || "";
+        const company = this.props.information['Company'] || "";
+        const city = this.props.information['City'] || "";
+        const from = this.props.information['From'] || "";
+        const to = this.props.information['To'] || "";
         return(
             <div>
-                <h3>{"Position"}</h3>
-                <p>{"From To"}</p>
-                <p>{"Company Name"}</p>
-                <p>{"City"}</p>
+                <h3>{position}</h3>
+                <p>{from + "-" + to}</p>
+                <p>{company + ", " + city}</p>
             </div>
         )
     }
