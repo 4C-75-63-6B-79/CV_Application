@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <header>{"CV Creator"}</header>
+        <header><h1>{"CV Creator"}</h1></header>
         <Form onInformationUpdate={this.informationUpdated}/>
         <CV cvInformation={this.state.information}/>
       </div>
