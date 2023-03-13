@@ -109,6 +109,8 @@ class Education extends React.Component {
                 errorMessage = "University name should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
                 errorMessage = "University name should be atmost 20 characters long.";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
@@ -137,6 +139,8 @@ class Education extends React.Component {
                 errorMessage = "Degree name should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
                 errorMessage = "Degree name should be atmost 20 characters long.";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
@@ -165,6 +169,8 @@ class Education extends React.Component {
                 errorMessage = "Subject name should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
                 errorMessage = "Subject name should be atmost 20 characters long.";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
@@ -193,6 +199,8 @@ class Education extends React.Component {
                 errorMessage = "City name should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
                 errorMessage = "City name should be atmost 20 characters long.";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
