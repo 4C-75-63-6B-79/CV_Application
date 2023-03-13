@@ -96,6 +96,8 @@ class Experience extends React.Component {
                 errorMessage = "Position should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
                 errorMessage = "Postion should be atmost 20 characters long.";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
@@ -124,6 +126,8 @@ class Experience extends React.Component {
                 errorMessage = "Company name should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
                 errorMessage = "Company name should be atmost 20 characters long.";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
@@ -152,6 +156,8 @@ class Experience extends React.Component {
                 errorMessage = "City name should be atleast 3 characters long.";
             } else if(inputValue.length > 20) {
                 errorMessage = "City name should be atmost 20 characters long.";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
