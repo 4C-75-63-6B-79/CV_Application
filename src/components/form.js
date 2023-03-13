@@ -29,7 +29,7 @@ class Form extends React.Component {
         this.updateEducationIds = this.updateEducationIds.bind(this);
         this.updateEducationInformation = this.updateEducationInformation.bind(this);
 
-        this.submitButtonClicked = this.submitButtonClicked.bind(this);
+        this.resetButtonClicked = this.resetButtonClicked.bind(this);
     }
 
     setPersonalInformation(attributeName, attributeValue) {
@@ -131,9 +131,9 @@ class Form extends React.Component {
         this.updateEducationInformation(educationId);
     }
 
-    submitButtonClicked(event) {
-        event.preventDefault();
-        console.log(this.state);
+    resetButtonClicked(event) {
+        // event.preventDefault();
+        // console.log(this.state);
     }
 
     render() {
@@ -143,7 +143,7 @@ class Form extends React.Component {
         const educationElements = this.state.educationIds.map((educationId) =>{
             return <Education key={"educationIndex"+educationId} educationId={educationId} onClickDeleteEducation={this.removeEducationButtonClicked} setEducationInformation={this.setEducationInformation}/>;
         });
-        const fromSubmitButton = <Button textContent="Submit" onClickMethod={this.submitButtonClicked}/>;
+        const fromResetButton = <Button type={"reset"} textContent="Reset" onClickMethod={this.resetButtonClicked}/>;
         const addOneMoreExperienceButton = <Button textContent="Add" onClickMethod={this.addOneMoreExperienceButtonClicked}/>;
         const addOneMoreEducationButton = <Button textContent="Add" onClickMethod={this.addOneMoreEducationButtonClicked}/>;
         return(
@@ -159,7 +159,7 @@ class Form extends React.Component {
                     {educationElements}
                     {addOneMoreEducationButton}
                 </fieldset>
-                {fromSubmitButton}
+                {fromResetButton}
             </form>
         );
     }
