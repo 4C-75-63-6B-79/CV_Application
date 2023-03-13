@@ -10,16 +10,23 @@ class CV extends React.Component {
     }
 
     render() {
+        const {personalInformation, experienceInformation, educationInformation} = this.props.cvInformation;
+        const experienceHtmlElements = Object.keys(experienceInformation).map((key) => {
+            return <CVExperience key={"ex"+key} information={experienceInformation[key]}/>;
+        });
+        const educationHtmlElements = Object.keys(educationInformation).map((key) => {
+            return <CVEducation key={"ed"+key} information={educationInformation[key]}/>;
+        });
         return(
             <div>
-                <CVHeader />
+                <CVHeader information={personalInformation}/>
                 <section>
                     <h2>Experience</h2>
-                    <CVExperience/>
+                    {experienceHtmlElements}
                 </section>
                 <section>
                     <h2>Education</h2>
-                    <CVEducation/>
+                    {educationHtmlElements}
                 </section>
             </div>
         )
