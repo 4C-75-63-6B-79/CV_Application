@@ -107,6 +107,7 @@ input:not(:focus):placeholder-shown + span,
 input:focus:placeholder-shown + span {
     padding: 0;
     border:none;
+    display: none;
 }
 
 button {
