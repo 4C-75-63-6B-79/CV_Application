@@ -110,7 +110,8 @@ input:focus:placeholder-shown + span {
     display: none;
 }
 
-button {
+button,
+.button {
     width: 100%;
     font-size: 18px;
     padding: 0.5rem;
@@ -123,6 +124,7 @@ button {
     outline: none;
 }
 
-button:hover {
+button:hover,
+.button:hover {
     background-color: #292929;
 }
