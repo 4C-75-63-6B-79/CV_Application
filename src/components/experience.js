@@ -230,7 +230,7 @@ class Experience extends React.Component {
         return(
             <section>
                 {inputElements}
-                <Button textContent={"Delete"} onClickMethod={this.deleteButtonClicked}/>
+                <Button type={"button"} textContent={"Delete"} onClickMethod={this.deleteButtonClicked}/>
             </section>
         )
     }
