@@ -152,7 +152,6 @@ class Form extends React.Component {
                     {educationElements}
                     {addOneMoreEducationButton}
                 </fieldset>
-                <input type={"reset"} className={"button"} value={"Reset"}/>
             </form>
         );
     }
