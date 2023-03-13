@@ -38,6 +38,7 @@ class Form extends React.Component {
         this.setState({
             personalInformation: updatedPersonalInformation
         });
+        this.props.onInformationUpdate(this.state);
     }
 
     setExperienceInformation(experienceId, attributeName, attributeValue) {
@@ -48,6 +49,7 @@ class Form extends React.Component {
         this.setState({
             experienceInformation: experienceInformation,
         });
+        this.props.onInformationUpdate(this.state);
     }
 
     addOneMoreExperienceButtonClicked(event) {
@@ -67,6 +69,7 @@ class Form extends React.Component {
         this.setState({
             experienceInformation: updatedExperienceInformation
         });
+        this.props.onInformationUpdate(this.state);
     }
 
     updateExperienceIds(experienceId) {
@@ -91,6 +94,7 @@ class Form extends React.Component {
         this.setState({
             educationInformation: educationInformation,
         });
+        this.props.onInformationUpdate(this.state);
     }
 
     addOneMoreEducationButtonClicked(event) {
@@ -110,6 +114,7 @@ class Form extends React.Component {
         this.setState({
             educationInformation: updatedEducationInformation
         });
+        this.props.onInformationUpdate(this.state);
     }
 
     updateEducationIds(educationId) {
