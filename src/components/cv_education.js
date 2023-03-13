@@ -7,12 +7,17 @@ class CVEducation extends React.Component {
     }
 
     render() {
+        const universityName = this.props.information['University Name'] || "";
+        const city = this.props.information['City'] || "";
+        const subject = this.props.information['Subject'] || "";
+        const degree = this.props.information['Degree'] || "";
+        const from = this.props.information['From'] || "";
+        const to = this.props.information['To'] || "";
         return(
             <div>
-                <h3>{"College"}</h3>
-                <p>{"From To"}</p>
-                <p>{"Subject"}</p>
-                <p>{"Degree"}</p>
+                <h3>{universityName + ", " + city}</h3>
+                <p>{from + "-" + to}</p>
+                <p>{subject + ", " + degree}</p>
             </div>
         )
     }
