@@ -104,6 +104,8 @@ class PersonalInformation extends React.Component {
                 errorMessage = "The first name should be more than 3 character";
             } else if(inputValue.length > 25) {
                 errorMessage = "The first name should be less than 25 characte";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
@@ -129,6 +131,8 @@ class PersonalInformation extends React.Component {
                 errorMessage = "The first name should be more than 3 character";
             } else if(inputValue.length > 25) {
                 errorMessage = "The first name should be less than 25 characte";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
@@ -175,6 +179,8 @@ class PersonalInformation extends React.Component {
                 errorMessage = 'Address should have more than 4 characters.';
             } else if(inputValue.length > 50){
                 errorMessage = 'Address should have less than 51 characters.';
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
@@ -200,6 +206,8 @@ class PersonalInformation extends React.Component {
                 errorMessage = "Phone number should have 10 digits.";
             } else if(inputValue.length > 10) {
                 errorMessage = "Phone number should have 10 digits.";
+            } else {
+                errorMessage = "Input is invalid.";
             }
         }
         this.setState({
