@@ -17,6 +17,7 @@ class App extends React.Component {
       }
     }
     this.informationUpdated = this.informationUpdated.bind(this);
+    this.loadExampleButtonClicked = this.loadExampleButtonClicked.bind(this);
   }
 
   informationUpdated(information) {
@@ -25,11 +26,15 @@ class App extends React.Component {
     });
   }
 
+  loadExampleButtonClicked() {
+    console.log('load example button clicked');
+  }
+
   render() {
     return(
       <div>
         <header className="appHeader"><h1>{"CV Creator"}</h1></header>
-        <Form onInformationUpdate={this.informationUpdated}/>
+        <Form onInformationUpdate={this.informationUpdated} onExampleButtonClicked={this.loadExampleButtonClicked}/>
         <CV cvInformation={this.state.information}/>
       </div>
     );
