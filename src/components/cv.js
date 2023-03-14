@@ -18,7 +18,7 @@ class CV extends React.Component {
             return <CVEducation key={"ed"+key} information={educationInformation[key]}/>;
         });
         return(
-            <div>
+            <div className="cv">
                 <CVHeader information={personalInformation}/>
                 <section>
                     <h2>Experience</h2>
