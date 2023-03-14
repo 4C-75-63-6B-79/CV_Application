@@ -22,7 +22,8 @@ body {
 }
 
 form {
-    margin: 5% 10%;
+    margin: 5% auto;
+    width: 210mm;
     background-color: #efefef;
     border-radius: 8px;
     box-shadow: #bbb 0px 5px 15px;
@@ -127,4 +128,42 @@ button,
 button:hover,
 .button:hover {
     background-color: #292929;
+}
+
+.cv {
+    margin: 5% auto;
+    width: 210mm;
+    height: 297mm;
+}
+
+.cv > header {
+    padding: 2rem;
+    background-color: #143e72;
+    color: #eeeeee;
+}
+
+.cv > header > h1 {
+    font-size: 2.4rem;
+}
+
+.cv > header > p {
+    font-size: 1.25rem;
+}
+
+.cv > section {
+    padding: 0.75rem;
+}
+
+.cv > section > h2 {
+    padding: 0.25rem;
+    border-bottom: 1px solid grey;
+    color: rgb(86, 117, 137);
+}
+
+.cv > section > div {
+    padding: 0.4rem;
+}
+
+.cv > section > div > h3 {
+    font-size: 1.25rem;
 }
